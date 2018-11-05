@@ -1,0 +1,17 @@
+<h1>ユーザー情報一覧</h1>
+<table border="1">
+    <tr>
+        <th>名前</th>
+        <th>詳細</th>
+        <th>編集</th>
+        <th>削除</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+        <td><%= user.name %></td>
+        <td><a href="/users/show?id=<%= user.id %>">チェック</a></td>
+        <td><a href="/users/edit?id=<%= user.id %>">編集</a></td>
+        <td><a href="/users/destroy?id=<%= user.id %>">削除</a></td>
+    </tr>
+    <% end %>
+</table>
